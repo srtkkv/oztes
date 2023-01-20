@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Agent registration portal.")
+    return HttpResponse("oZTeS management console")
