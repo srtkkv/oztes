@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from .Core.policy import Policy
 
 class OU(models.Model): # organiztion units
     id = models.UUIDField(
@@ -11,6 +12,7 @@ class OU(models.Model): # organiztion units
     Description = models.TextField(blank=True, null=True)
 
     def __str__(self):
+        p = Policy()
         return self.Name
 
     def get_list_of_parents(self):
@@ -83,4 +85,23 @@ class Policy_appied_to_Emp(models.Model):
     def __str__(self):
         return f'{self.policy} appliend on: {self.Emp}'
 
+class agent(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
+    Emp = models.ForeignKey('Emp', on_delete=models.CASCADE, null=False, help_text='Agents owner', related_name='owned')
+    OS = models.CharField('Host OS', max_length=200)
 
+class CA(models.Model):
+    TYPE = (
+        ('CA', 'CA Certificate'),
+        ('srv', 'Server Certificate'),
+        ('agnt', 'Agent Certificate'),
+        ('csr', 'Agent\'s CSR' ),
+    )
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
+    type = models.CharField('Certificte')
