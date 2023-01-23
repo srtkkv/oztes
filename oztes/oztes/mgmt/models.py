@@ -7,7 +7,7 @@ class OU(models.Model): # organiztion units
         primary_key=True,
         default=uuid.uuid4,
         editable=False)
-    parent = models.ForeignKey('self',related_name='subortinate', on_delete=models.DO_NOTHING,db_constraint=False,)
+    parent = models.ForeignKey('self',related_name='subortinate', on_delete=models.DO_NOTHING,db_constraint=False)#,blank=True, null=True)
     Name = models.CharField(max_length=200)
     Description = models.TextField(blank=True, null=True)
 

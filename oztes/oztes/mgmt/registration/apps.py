@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MgmtConfig(AppConfig):
+class RegistrationConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'mgmt'
+    name = 'oztes.mgmt.registration'

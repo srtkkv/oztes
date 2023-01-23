@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mgmt.registration',
-    'mgmt',
+    'oztes.mgmt.registration',
+    'oztes.mgmt',
 ]
 
 MIDDLEWARE = [
@@ -75,13 +75,22 @@ WSGI_APPLICATION = 'oztes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'oztes_test',
+        'USER': 'oztes_test_root',
+        'PASSWORD': 'Qw123456',
+        'HOST': '192.168.88.4',
+        'PORT': '5432',
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
