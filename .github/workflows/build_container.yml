@@ -8,27 +8,27 @@ on:
       - Dockerfile
       - requirements.txt
 jobs:
-  docker-buld-push:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout 
-      uses: actions/checkout@v3
-    - id: docker-publish
-      name: Build image
-      uses: bitovi/github-actions-docker-publish@v1.0.3
-      with:
-        docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
-        docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        checkout: 'false'
-        image_tag: 'latest'
-        #sha: 'true' # won't do anything since image_tag is set
-        org_name: 'srtkkv'
-        repo_name: 'oztes'
-        #build_args: --build-arg git_personal_token=PAT_token
-        working-directory: .
-    - run: |
-        echo "Image Created:  ${{ env.image }}"
-        echo "Tag Created: ${{ env.tag }}"
+#  docker-buld-push:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: Checkout
+#      uses: actions/checkout@v3
+#    - id: docker-publish
+#      name: Build image
+#      uses: bitovi/github-actions-docker-publish@v1.0.3
+#      with:
+#        docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
+#        docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#        checkout: 'false'
+#        image_tag: 'latest'
+#        #sha: 'true' # won't do anything since image_tag is set
+#        org_name: 'srtkkv'
+#        repo_name: 'oztes'
+#        #build_args: --build-arg git_personal_token=PAT_token
+#        working-directory: .
+#    - run: |
+#        echo "Image Created:  ${{ env.image }}"
+#        echo "Tag Created: ${{ env.tag }}"
   deploy-test-env:
     needs: docker-buld-push
     runs-on: ubuntu-latest
