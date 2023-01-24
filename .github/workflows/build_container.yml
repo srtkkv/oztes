@@ -18,7 +18,7 @@ jobs:
           ENVIRONMENT: test
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_SEC }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             docker ps
 #  docker-buld-push:
