@@ -1,0 +1,29 @@
+name: Buld-oZTes-Docker-Container
+on:
+  push:
+    branches: 
+    - main
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@v3
+    - name: do something to the code
+      run: echo "Changed code" > text.txt
+    - id: docker-publish
+      name: Build image
+      uses: bitovi/github-actions-docker-publish@v1.0.3
+      with:
+        docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
+        docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        checkout: 'false'
+        image_tag: latest
+        sha: 'true' # won't do anything since image_tag is set
+        org_name: srtkkv
+        repo_name: srtkkv/oztes
+        #build_args: --build-arg git_personal_token=PAT_token
+        working-directory: .
+    - run: |
+        echo "Image Created:  ${{ env.image }}"
+        echo "Tag Created: ${{ env.tag }}"
