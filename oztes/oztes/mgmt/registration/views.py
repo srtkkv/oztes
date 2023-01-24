@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from ..models import Emp,Policy
+from ..models import Emp,Policy, Cartificate
 from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt

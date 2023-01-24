@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ozte>
+    <message>
+    <agent>
+        <configuration>
+            <id></id>
+            <server>
+                 <mgmtURL>https://oztes.k2v.site/profile/#id#</mgmtURL>
+                 <rptURL></rptURL>
+             </server>
+        </configuration>
+
+        <request>
+            <status>accepted</status>
+        </request>
+    </agent>
+    </message>
+</ozte>

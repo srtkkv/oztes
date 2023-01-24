@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+ <ozte>
+     <policy>
+     <agent>
+         <configuration>
+             <cripto>
+                 <key>
+                     <lenght>1024</lenght>
+                     <type>RSA</type>
+                     <sign>sha256</sign>
+                 </key>
+                 <certificate_template>
+                     <countryName manatory='False'></countryName>
+                     <c manatory='False'></c>
+                     <stateOrProvinceName manatory='False'></stateOrProvinceName>
+                     <st manatory='False'></st>
+                     <localityName ></localityName>
+                     <l></l>
+                     <organizationName>Test Org</organizationName>
+                     <o></o>
+                     <organizationalUnitName></organizationalUnitName>
+                     <ou></ou>
+                     <commonName></commonName>
+                     <cn></cn>
+                     <emailAddress></emailAddress>
+                 </certificate_template>
+                 <ca>
+                     <certificate>
+                         <data></data>
+                     </certificate>
+                 </ca>
+             </cripto>
+             <server>
+                 <mgmtURL>https://oztes.k2v.site/</mgmtURL>
+                 <rptURL></rptURL>
+             </server>
+         </configuration>
+     </agent>
+</policy>
+</ozte>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ozte>
+    <agent>
+        <id></id>
+        <info>
+            <hostname>air</hostname>
+            <OS>MACOSX</OS>
+            <username>air</username>
+            <IPs>
+                <ip>127.0.0.1/24</ip>
+                <ip>192.168.88.26/24</ip>
+            </IPs>
+
+        </info>
+        <CSR>
+            <subject>
+                <policy>https://oztes.k2v.site/profile/</policy>
+                <countryName manatory='False'>Russia</countryName>
+                 <c manatory='False'></c>
+                 <stateOrProvinceName manatory='False'></stateOrProvinceName>
+                 <st manatory='False'></st>
+                 <localityName ></localityName>
+                 <l></l>
+                 <organizationName>Test Org</organizationName>
+                 <o></o>
+                 <organizationalUnitName></organizationalUnitName>
+                 <ou></ou>
+                 <commonName></commonName>
+                 <cn></cn>
+                 <emailAddress></emailAddress>
+            </subject>
+            <csrDATA type="base64"></csrDATA>
+            <sign></sign>
+        </CSR>
+    </agent>
+</ozte>
