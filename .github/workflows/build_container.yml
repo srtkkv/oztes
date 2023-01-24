@@ -8,6 +8,20 @@ on:
 #      - Dockerfile
 #      - requirements.txt
 jobs:
+  deploy-test-env:
+#    needs: docker-buld-push
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy to test environment
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_SEC }}
+        port: 22
+        script: |
+          docker ps
+          ls -al
 #  docker-buld-push:
 #    runs-on: ubuntu-latest
 #    steps:
@@ -29,18 +43,5 @@ jobs:
 #    - run: |
 #        echo "Image Created:  ${{ env.image }}"
 #        echo "Tag Created: ${{ env.tag }}"
-  deploy-test-env:
-    needs: docker-buld-push
-    runs-on: ubuntu-latest
-    steps:
-    - name: deploy to test environment
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        key: ${{ secrets.SSH_SEC }}
-        port: 22
-        script: |
-          docker ps
-          ls -al
+  
 
