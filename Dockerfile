@@ -1,5 +1,9 @@
 FROM python:3.11-slim
-MAINTAINER KKV <kovalenkokv@gmail.com>
+MAINTAINER SRTKKV <kovalenkokv@gmail.com>
+ENV DB_NAME = $DB_NAME
+ENV DB_HOST = $DB_HOST
+ENV DB_USER = $DB_USER
+ENV DB_PASS = $DB_PASS
 RUN adduser myuser
 RUN pip install --upgrade pip
 USER myuser
