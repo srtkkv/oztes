@@ -36,10 +36,10 @@ jobs:
     - name: deploy to test environment
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ secrets.HOST }}
+        host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_SEC }}
-        port: '22'
+        port: 22
         script: |
           docker ps
           ls -al
