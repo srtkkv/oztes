@@ -19,7 +19,7 @@ jobs:
         docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
         checkout: 'false'
         image_tag: latest
-        sha: 'true' # won't do anything since image_tag is set
+        #sha: 'true' # won't do anything since image_tag is set
         org_name: srtkkv
         repo_name: srtkkv/oztes
         #build_args: --build-arg git_personal_token=PAT_token
