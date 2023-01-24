@@ -42,5 +42,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker run -d --name oztes -p 9000:8000 -e DB_HOST=${{ secrets.DB_TEST_HOST }} -e DB_NAME=${{ secrets.DB_TEST_NAME }} -e DB_USER=${{ secrets.DB_TEST_USER }} -e DB_PASS=${{ secrets.DB_TEST_PASS }} srtkkv/oztes:latest  
+            docker run -d --rm --name oztes -p 9000:8000 -e DB_HOST=${{ secrets.DB_TEST_HOST }} -e DB_NAME=${{ secrets.DB_TEST_NAME }} -e DB_USER=${{ secrets.DB_TEST_USER }} -e DB_PASS=${{ secrets.DB_TEST_PASS }} srtkkv/oztes:latest  
 
