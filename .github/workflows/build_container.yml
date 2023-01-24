@@ -12,16 +12,14 @@ jobs:
 #    needs: docker-buld-push
     runs-on: ubuntu-latest
     steps:
-    - name: deploy to test environment
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        key: ${{ secrets.SSH_SEC }}
-        port: 22
-        script: |
-          docker ps
-          ls -al
+      - name: executing remote ssh commands using password
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            key: ${{ secrets.SSH_SEC }}
+            script: |
+              docker ps
 #  docker-buld-push:
 #    runs-on: ubuntu-latest
 #    steps:
