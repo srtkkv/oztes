@@ -118,7 +118,7 @@ class Agent(models.Model):
         return f'{self.Emp} - {self.id}'
 
     def register_unknown_agent(self, xml):
-        agent_req = ET.fromstring(xml)
+        #agent_req = ET.fromstring(xml)
 
         pass
 
