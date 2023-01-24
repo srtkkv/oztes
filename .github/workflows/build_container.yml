@@ -34,9 +34,9 @@ jobs:
     - name: deploy to test environment
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ test.HOST }}
-        username: ${{ test.SSH_USER }}
-        key: ${{ test.SSH_SEC }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_SEC }}
         port: 22
         script: |
           docker ps
