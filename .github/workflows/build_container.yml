@@ -20,8 +20,8 @@ jobs:
         checkout: 'false'
         image_tag: latest
         #sha: 'true' # won't do anything since image_tag is set
-        org_name: srtkkv
-        repo_name: srtkkv/oztes
+        org_name: oztes
+        repo_name: srtkkv
         #build_args: --build-arg git_personal_token=PAT_token
         working-directory: .
     - run: |
