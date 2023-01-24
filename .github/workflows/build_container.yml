@@ -4,13 +4,11 @@ on:
     branches: 
     - main
 jobs:
-  docker:
+  docker-buld-push:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout 
       uses: actions/checkout@v3
-    - name: do something to the code
-      run: echo "Changed code" > text.txt
     - id: docker-publish
       name: Build image
       uses: bitovi/github-actions-docker-publish@v1.0.3
@@ -27,3 +25,20 @@ jobs:
     - run: |
         echo "Image Created:  ${{ env.image }}"
         echo "Tag Created: ${{ env.tag }}"
+  deploy-test-env:
+    needs: docker-buld-push
+    runs-on: ubuntu-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: deploy to test environment
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ test.HOST }}
+          username: ${{ test.SSH_USER }}
+          key: ${{ test.SSH_SEC }}
+          port: 22
+          script: |
+            docker ps
+            ls -al
+
