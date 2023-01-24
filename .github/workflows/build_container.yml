@@ -28,17 +28,17 @@ jobs:
   deploy-test-env:
     needs: docker-buld-push
     runs-on: ubuntu-latest
-      steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: deploy to test environment
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ test.HOST }}
-          username: ${{ test.SSH_USER }}
-          key: ${{ test.SSH_SEC }}
-          port: 22
-          script: |
-            docker ps
-            ls -al
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: deploy to test environment
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ test.HOST }}
+        username: ${{ test.SSH_USER }}
+        key: ${{ test.SSH_SEC }}
+        port: 22
+        script: |
+          docker ps
+          ls -al
 
