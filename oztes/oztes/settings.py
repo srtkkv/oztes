@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--g0wber$%vko*sh^ns=4@0jhe$yv$(_vtfs@-sojmk8p=gmv3i
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ['https://*.k2v.site']
 
 # Application definition
 
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CSRF_TRUSTED_ORIGINS = ['https://oztes.k2v.site']
+
 
 ROOT_URLCONF = 'oztes.urls'
 
