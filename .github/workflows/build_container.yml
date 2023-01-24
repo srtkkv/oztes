@@ -3,10 +3,10 @@ on:
   push:
     branches: 
     - main
-    paths:
-      - oztes/**
-      - Dockerfile
-      - requirements.txt
+#    paths:
+#      - oztes/**
+#      - Dockerfile
+#      - requirements.txt
 jobs:
 #  docker-buld-push:
 #    runs-on: ubuntu-latest
