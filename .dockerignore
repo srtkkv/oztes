@@ -3,3 +3,4 @@ k8s/*
 tmp/
 .github/
 .idea/
+oztes/db.sqlite3
