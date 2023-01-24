@@ -31,6 +31,7 @@ CSRF_TRUSTED_ORIGINS = ['https://*.k2v.site']
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
