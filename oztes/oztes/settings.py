@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'oztes.mgmt.registration',
     'oztes.mgmt',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

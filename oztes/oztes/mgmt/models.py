@@ -117,9 +117,7 @@ class Agent(models.Model):
     def __str__(self):
         return f'{self.Emp} - {self.id}'
 
-    def register_unknown_agent(self, xml):
-        #agent_req = ET.fromstring(xml)
-
+    def register_unknown_agent(self, xml=None):
         pass
 
 
